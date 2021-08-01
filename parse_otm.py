@@ -92,7 +92,7 @@ async def parse_otm():
 
     df = pd.DataFrame.from_records(
         await tqdm.gather(
-            [
+            *[
                 extract_additional_property_details(property_link, file_date)
                 for property_link in locations
             ]
